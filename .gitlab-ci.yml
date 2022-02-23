@@ -19,6 +19,8 @@ test_a:
   stage: test
   tags:
     - asd
+  dependencies:
+    - build_a
   needs:
     - build_a
   script: 
@@ -32,6 +34,8 @@ deploy_a:
   tags:
     - asd
   needs:
+    - test_a
+  dependencies:
     - test_a
   script:
     - echo "Its ok jojo"

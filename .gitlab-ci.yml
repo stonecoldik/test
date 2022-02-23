@@ -23,6 +23,8 @@ test_a:
     - build_a
   needs:
     - build_a
+  variables:
+    GIT_STRATEGY: none
   script: 
     - echo "Testing jojo"
     - ls

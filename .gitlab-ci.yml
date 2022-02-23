@@ -1,0 +1,31 @@
+stages:
+  - build
+  - test
+  - deploy
+
+image: alpine
+
+
+build_a:
+  stage: build
+  script:
+    - echo "JOjo creating file"
+    - echo "hello jojo" > jojo.txt
+
+
+test_a:
+  stage: test
+  needs:
+    - build_a
+  script: 
+    - echo "Testing jojo"
+    - cat jojo.txt
+
+
+
+deploy_a:
+  stage: deploy
+  needs:
+    - test_a
+  script:
+    - echo "Its ok jojo"

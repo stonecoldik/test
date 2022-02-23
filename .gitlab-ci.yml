@@ -8,6 +8,8 @@ image: alpine
 
 build_a:
   stage: build
+  tags:
+    - jojo
   script:
     - echo "JOjo creating file"
     - echo "hello jojo" > jojo.txt
@@ -15,6 +17,8 @@ build_a:
 
 test_a:
   stage: test
+  tags:
+    - jojo
   needs:
     - build_a
   script: 
@@ -25,6 +29,8 @@ test_a:
 
 deploy_a:
   stage: deploy
+  tags:
+    - jojo
   needs:
     - test_a
   script:

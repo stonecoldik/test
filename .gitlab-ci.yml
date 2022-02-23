@@ -9,7 +9,7 @@ image: alpine
 build_a:
   stage: build
   tags:
-    - qwe
+    - asd
   script:
     - echo "JOjo creating file"
     - echo "hello jojo" > jojo.txt
@@ -18,7 +18,7 @@ build_a:
 test_a:
   stage: test
   tags:
-    - qwe
+    - asd
   needs:
     - build_a
   script: 
@@ -30,7 +30,7 @@ test_a:
 deploy_a:
   stage: deploy
   tags:
-    - qwe
+    - asd
   needs:
     - test_a
   script:

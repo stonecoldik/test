@@ -42,4 +42,3 @@ deploy_a:
     - test_a
   script:
     - echo "Its ok jojo"
-    - ls ../../../
